@@ -1,0 +1,10 @@
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  font-size: 40;
+  color: #010101;
+  padding: 50px;
+}
