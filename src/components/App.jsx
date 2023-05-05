@@ -16,14 +16,11 @@ export class App extends Component {
     filter: '',
   };
 
-
-
   removeContact = id => {
     this.setState(({ contacts }) => ({
       contacts: contacts.filter(contact => contact.id !== id),
     }));
   };
-
   addContact = data => {
     const contact = { id: shortid.generate(), ...data };
     this.setState(({ contacts }) => ({
@@ -35,13 +32,11 @@ export class App extends Component {
   };
 
   render() {
-    const { contacts, filter } = this.state;
-
-      const normalizeFilter = this.state.filter.toLowerCase();
-
-      const foundContacts = this.state.contacts.filter(contact =>
-        contact.name.toLowerCase().includes(normalizeFilter)
-      );
+    const { filter } = this.state;
+    const normalizeFilter = this.state.filter.toLowerCase();
+    const foundContacts = this.state.contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizeFilter)
+    );
     return (
       <div className={css.app}>
         <h1>Phonebook</h1>
