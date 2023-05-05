@@ -15,7 +15,7 @@ export class App extends Component {
     ],
   };
 
-  removingCard = id => {
+  removeContact = id => {
     this.setState(prevState => ({ 
       contacts: prevState.contacts.filter(contact => contact.id !== id)
     }))
@@ -38,14 +38,13 @@ export class App extends Component {
       <div className={css.app}>
         <h1>Phonebook</h1>
         <PhoneBookForm
-          addContact={this.addContact}
           onSubmit={this.addContact}
         />
         <h2>Contacts</h2>
         <Filter />
         <ContactList
           list={this.state.contacts}
-          removeCard={this.removingCard}
+          removeCard={this.removeContact}
         />
       </div>
     );
