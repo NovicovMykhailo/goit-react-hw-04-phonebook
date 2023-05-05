@@ -24,6 +24,7 @@ export default function PhoneBookForm() {
           required
         />
       </label>
+      <button type='submit' className={css.addContact}>Add Contact</button>
     </form>
   );
 }

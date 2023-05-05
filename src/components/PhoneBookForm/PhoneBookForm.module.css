@@ -1,22 +1,45 @@
-.form{
-    display: flex;
-    /* flex-direction: column; */
-    gap:25px;
-    font-size: 20px;
-    color: grey;
-    width: 400px;
-   align-items: flex-end;
+.form {
+  display: flex;
+  gap: 25px;
+  font-size: 20px;
+  color: grey;
+  width: 400px;
+  align-items: flex-end;
 }
 
-.form input{
-    padding: 10px 25px;
-    border-radius: 10px;
-    margin-top: 10px;
-    outline: none;
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+.form input {
+  padding: 10px 25px;
+  border-radius: 10px;
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
-.form input:hover, .form input:focus{
-    outline: 2px solid lightgray;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.form input:hover,
+.form input:focus {
+  outline: 2px solid lightgray;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.addContact {
+  display: block;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  white-space: nowrap;
+  font-size: 20px;
+  color: grey;
+ 
+}
+.addContact:active {
+  background-color: #edfeff;
+  box-shadow: rgba(41, 180, 168, 0.594) 0px 3px 8px;
+  transform: translateY(4px);
+}
+.addContact:hover{
+     background-color: #ece9e9;
+     color: rgb(100, 100, 100);
 }

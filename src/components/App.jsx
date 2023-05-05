@@ -2,6 +2,7 @@ import css from './App.module.css';
 import { Component } from 'react';
 import PhoneBookForm from './PhoneBookForm/PhoneBookForm';
 import ContactList from './ContactList/ContactList';
+import Filter from './Filter/Filter';
 
 export class App extends Component {
   state = {
@@ -17,18 +18,10 @@ export class App extends Component {
         <h1>Phonebook</h1>
         <PhoneBookForm />
         <h2>Contacts</h2>
-        {/* <Filter ... /> */}
+        <Filter/>
         <ContactList/>
       </div>
     );
   }
 }
 
-{/* <div>
-  <h1>Phonebook</h1>
-  <ContactForm ... />
-
-  <h2>Contacts</h2>
-  <Filter ... />
-  <ContactList ... />
-</div> */}
