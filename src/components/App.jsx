@@ -13,8 +13,6 @@ export class App extends Component {
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
-    filter: '',
-
   };
 
   removingCard = e => {
@@ -26,9 +24,9 @@ export class App extends Component {
     e.preventDefault();
     const form = e.currentTarget;
     // shortid.renerate()
-    console.log(e, shortid.renerate());
+    // console.log(e, shortid.generate());
 
-      form.reset();
+      // form.reset();
   };
 
   render() {
