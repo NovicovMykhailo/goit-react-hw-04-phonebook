@@ -4,7 +4,7 @@ import ContactCard from '../ContactCard/ContactCard';
 
 export default function ContactList() {
   return (
-    <ul classMane={css.contactList}>
+    <ul className={css.contactList}>
       <ContactCard />
     </ul>
   );

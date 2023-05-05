@@ -1,13 +1,16 @@
 li {
   display: inline-flex;
   flex-direction: column;
-  min-width: 280px;
+  min-width: 300px;
   height: min-content;
   font-size: 24px;
   list-style: none;
   gap: 12px;
   padding: 30px;
   position: relative;
+  outline: 1px dashed rgba(128, 128, 128, 0.188);
+  outline-offset: -16px;
+  outline-width: 2px;
 
   border-radius: 10px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -17,10 +20,11 @@ li {
   display: flex;
   justify-content: space-between;
   margin: 0;
-  font-size: 20px;
-  align-items: center;
+  font-size: 16px;
+  align-items:first baseline;
   font-weight: 500;
   text-transform: uppercase;
+  gap: 15px;
 }
 
 .value {
@@ -29,6 +33,7 @@ li {
   font-weight: 400;
   color: gray;
 }
+
 .button {
   display: block;
   border-radius: 50%;
@@ -52,4 +57,4 @@ li {
   box-shadow: rgba(41, 180, 168, 0.594) 0px 3px 8px;
   transform: translateY(4px);
 }
-/*  */
+
