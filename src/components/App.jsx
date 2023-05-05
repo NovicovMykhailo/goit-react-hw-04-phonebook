@@ -15,41 +15,39 @@ export class App extends Component {
     ],
   };
 
-  removingCard = e => {
-    const id = e.currentTarget.parentNode.dataset.id;
-    // this.state.contacts.filter(item =>{return console.log(item.id === id)})
+  removingCard = id => {
+    this.setState(prevState => ({ 
+      contacts: prevState.contacts.filter(contact => contact.id !== id)
+    }))
+
   };
 
-  addContact = e => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const name = form.elements.name.value;
-    const number = form.elements.number.value;
+  addContact = data => {
     const id = shortid.generate();
-    let obj = { name: { name }, number: { number }, id: { id } };
-     console.log(obj);
-    
+    let obj = { id, ...data };
+    // this.setState({
+    //   ...this.state.contacts +
+    //   obj,
+    // });
+    console.log( obj);
 
-    // shortid.renerate()
-    // console.log(e, shortid.generate());
-    // this.props.contacts.onSubmit({...this.props.contacts, })
-    // form.reset();
   };
 
   render() {
     return (
       <div className={css.app}>
         <h1>Phonebook</h1>
-        <PhoneBookForm addContact={this.addContact} />
+        <PhoneBookForm
+          addContact={this.addContact}
+          onSubmit={this.addContact}
+        />
         <h2>Contacts</h2>
         <Filter />
         <ContactList
           list={this.state.contacts}
-          v
           removeCard={this.removingCard}
         />
       </div>
     );
   }
 }
-

@@ -10,12 +10,21 @@ export default class PhoneBookForm extends Component {
   onInputValue = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+  handlerOnSubmit = e => {
+    e.preventDefault();
+    this.props.onSubmit(this.state);
+    this.reset()
+  };
+
+  reset = () => {
+    this.setState({ name: '', number: '' });
+  }
 
   render() {
-    const { addContact } = this.props;
+    // const { addContact } = this.props;
     const { name, number } = this.state;
     return (
-      <form action="" className={css.form} onSubmit={addContact}>
+      <form action="" className={css.form} onSubmit={this.handlerOnSubmit}>
         <label>
           Name
           <input
