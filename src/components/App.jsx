@@ -20,24 +20,32 @@ export class App extends Component {
     // this.state.contacts.filter(item =>{return console.log(item.id === id)})
   };
 
-  addConatct = e => {
+  addContact = e => {
     e.preventDefault();
     const form = e.currentTarget;
+    const name = form.elements.name.value;
+    const number = form.elements.number.value;
+    const id = shortid.generate();
+    let obj = { name: { name }, number: { number }, id: { id } };
+     console.log(obj);
+    
+
     // shortid.renerate()
     // console.log(e, shortid.generate());
-
-      // form.reset();
+    // this.props.contacts.onSubmit({...this.props.contacts, })
+    // form.reset();
   };
 
   render() {
     return (
       <div className={css.app}>
         <h1>Phonebook</h1>
-        <PhoneBookForm addContact={this.addConatct} />
+        <PhoneBookForm addContact={this.addContact} />
         <h2>Contacts</h2>
         <Filter />
         <ContactList
           list={this.state.contacts}
+          v
           removeCard={this.removingCard}
         />
       </div>
