@@ -13,15 +13,15 @@ export default class PhoneBookForm extends Component {
   handlerOnSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state);
-    this.reset()
+    this.reset();
   };
 
   reset = () => {
     this.setState({ name: '', number: '' });
-  }
+  };
 
   render() {
-    // const { addContact } = this.props;
+
     const { name, number } = this.state;
     return (
       <form action="" className={css.form} onSubmit={this.handlerOnSubmit}>
@@ -45,7 +45,7 @@ export default class PhoneBookForm extends Component {
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
-            placeholder="+038-000-00-00"
+            placeholder="(###) ###-####"
             value={number}
             onChange={this.onInputValue}
           />

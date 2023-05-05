@@ -12,10 +12,12 @@
 }
 .filterField:hover,
 .filterField:focus {
-  outline: 2px solid lightgray;
+   outline: 2px solid rgb(120, 119, 119);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .label{
-  font-size: 20px;
-  color: grey;
+  font-size: 24px;
+  font-weight: 400;
+   color:black;
 }
+.filterField { font-size: 24px; font-family: monospace; }

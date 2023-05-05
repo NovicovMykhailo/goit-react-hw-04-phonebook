@@ -16,6 +16,8 @@ export class App extends Component {
     filter: '',
   };
 
+
+
   removeContact = id => {
     this.setState(({ contacts }) => ({
       contacts: contacts.filter(contact => contact.id !== id),
@@ -28,18 +30,25 @@ export class App extends Component {
       contacts: [contact, ...contacts],
     }));
   };
+  changeFilter = e => {
+    this.setState({ filter: e.currentTarget.value });
+  };
 
   render() {
+    const { contacts, filter } = this.state;
+
+      const normalizeFilter = this.state.filter.toLowerCase();
+
+      const foundContacts = this.state.contacts.filter(contact =>
+        contact.name.toLowerCase().includes(normalizeFilter)
+      );
     return (
       <div className={css.app}>
         <h1>Phonebook</h1>
         <PhoneBookForm onSubmit={this.addContact} />
         <h2>Contacts</h2>
-        <Filter />
-        <ContactList
-          list={this.state.contacts}
-          removeCard={this.removeContact}
-        />
+        <Filter onChange={this.changeFilter} filterValue={filter} />
+        <ContactList list={foundContacts} removeCard={this.removeContact} />
       </div>
     );
   }

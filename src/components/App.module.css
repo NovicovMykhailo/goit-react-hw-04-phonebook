@@ -4,9 +4,20 @@
   justify-content: start;
   align-items: start;
   flex-direction: column;
-  color: #010101;
+  background-color: #010101;
   margin: 4px;
   border-radius: 25px;
   padding: 50px;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(202, 201, 201, 0.5) -3px -3px 6px 1px inset;
+  
+  background-image: url(https://pixabay.com/get/g7f386fb10dbba252e52e8b53e3c57b41d547d44fa2fcc07490b64ecb260074556c30ec3d5cdfd931015a0793da65fb77deec661980b7daaad576a83b833d9f21_1280.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+input{
+  background-color: rgba(255, 255, 255, 0.261)
+  ;
+} 
+body{
+   background-color: #DBCDC0;
 }
