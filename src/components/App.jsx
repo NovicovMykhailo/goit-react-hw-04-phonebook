@@ -15,18 +15,33 @@ export class App extends Component {
     ],
     filter: '',
   };
+  checkInstance = data => {
+    const filter = this.state.contacts.filter(e => {
+      if (e.name === data.name) {
+        return true;
+      }
+      return false;
+    });
+    console.log(filter);
+  };
 
   removeContact = id => {
     this.setState(({ contacts }) => ({
       contacts: contacts.filter(contact => contact.id !== id),
     }));
   };
+
   addContact = data => {
     const contact = { id: shortid.generate(), ...data };
-    this.setState(({ contacts }) => ({
-      contacts: [contact, ...contacts],
-    }));
+    if (Boolean(this.state.contacts.find(o => o.name === data.name))) {
+      return alert(`<< ${data.name} >> is already in contacts`);
+    } else {
+      this.setState(({ contacts }) => ({
+        contacts: [contact, ...contacts],
+      }));
+    }
   };
+
   changeFilter = e => {
     this.setState({ filter: e.currentTarget.value });
   };
