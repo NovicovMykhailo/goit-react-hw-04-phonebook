@@ -1,5 +1,7 @@
 import css from './ContactCard.module.css';
 import { Component } from 'react';
+import PropTypes from 'prop-types';
+
 
 export default class ContactCard extends Component {
 
@@ -27,3 +29,9 @@ export default class ContactCard extends Component {
     );
   }
 }
+
+ContactCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+}; 

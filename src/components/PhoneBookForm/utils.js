@@ -1,4 +1,4 @@
-export default function formatPhoneNumber(phoneNumber) {
+export default function formatPhoneNumber(phoneNumber, onBackspace) {
   const cleanNum = phoneNumber.toString().replace(/\D/g, '');
   const match = cleanNum.match(/^(\d{3})(\d{0,3})(\d{0,2})(\d{0,2})$/);
   if (match) {
@@ -11,5 +11,11 @@ export default function formatPhoneNumber(phoneNumber) {
       match[4]
     );
   }
+    if (
+      onBackspace &&
+      cleanNum.length < phoneNumber.toString().replace(/\D/g, '').length
+    ) {
+      onBackspace();
+    }
   return cleanNum;
 }

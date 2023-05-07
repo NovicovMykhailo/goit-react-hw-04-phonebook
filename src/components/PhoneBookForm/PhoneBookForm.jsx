@@ -1,6 +1,7 @@
 import css from './PhoneBookForm.module.css';
 import { Component } from 'react';
 import formatPhoneNumber from './utils';
+import PropTypes from 'prop-types';
 
 export default class PhoneBookForm extends Component {
   state = {
@@ -13,6 +14,12 @@ export default class PhoneBookForm extends Component {
       this.setState({ number: formatPhoneNumber(e.target.value) });
     } else {
       this.setState({ name: e.target.value });
+    }
+  };
+
+  clearingField = e => {
+    if (e.key === 'Backspace') {
+      this.setState({ number: '' });
     }
   };
 
@@ -40,6 +47,7 @@ export default class PhoneBookForm extends Component {
             required
             value={name}
             onChange={this.onInputValue}
+            onClick={this.clearingField}
           />
         </label>
         <label>
@@ -53,6 +61,7 @@ export default class PhoneBookForm extends Component {
             placeholder="(NNN) NNN NN NN"
             value={number}
             onChange={this.onInputValue}
+            onKeyDown={this.clearingField}
           />
         </label>
         <button type="submit" className={css.addContact}>
@@ -62,3 +71,7 @@ export default class PhoneBookForm extends Component {
     );
   }
 }
+
+PhoneBookForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
