@@ -1,18 +1,19 @@
 .app {
-  height: 100vh;
+
   display: flex;
   justify-content:flex-start;
   align-items:flex-start;
   flex-direction: column;
   background-color: #010101;
+          min-width: 360px;
   margin: 4px;
   border-radius: 25px;
-  padding: 50px;
+  padding: 15px;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(202, 201, 201, 0.5) -3px -3px 6px 1px inset;
   
-  background-image: url(https://pixabay.com/get/g7f386fb10dbba252e52e8b53e3c57b41d547d44fa2fcc07490b64ecb260074556c30ec3d5cdfd931015a0793da65fb77deec661980b7daaad576a83b833d9f21_1280.jpg);
-  background-size: cover;
+  background-image: url(https://fastly.picsum.photos/id/135/2560/1920.jpg?hmac=MAh0eBIqBNEgND6D2vgcIBIQ4BE1jzewN1QQWDfBBEY);  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 input{
   background-color: rgba(255, 255, 255, 0.261)
@@ -20,4 +21,11 @@ input{
 } 
 body{
    background-color: #DBCDC0;
+}
+@media screen and (min-width: 720px){
+  .app {
+      height: 100vh;
+        padding: 50px;
+
+  }
 }

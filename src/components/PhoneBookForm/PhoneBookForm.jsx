@@ -1,7 +1,6 @@
 import css from './PhoneBookForm.module.css';
 import { Component } from 'react';
-
-
+import formatPhoneNumber from './utils';
 
 export default class PhoneBookForm extends Component {
   state = {
@@ -10,8 +9,13 @@ export default class PhoneBookForm extends Component {
   };
 
   onInputValue = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    if (e.target.name === 'number') {
+      this.setState({ number: formatPhoneNumber(e.target.value) });
+    } else {
+      this.setState({ name: e.target.value });
+    }
   };
+
   handlerOnSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state);
@@ -23,7 +27,6 @@ export default class PhoneBookForm extends Component {
   };
 
   render() {
-
     const { name, number } = this.state;
     return (
       <form action="" className={css.form} onSubmit={this.handlerOnSubmit}>
@@ -47,7 +50,7 @@ export default class PhoneBookForm extends Component {
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
-            placeholder="(###) ###-####"
+            placeholder="(NNN) NNN NN NN"
             value={number}
             onChange={this.onInputValue}
           />

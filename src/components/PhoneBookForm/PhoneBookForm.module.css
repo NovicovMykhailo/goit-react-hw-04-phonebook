@@ -3,8 +3,17 @@
   gap: 25px;
   font-size: 20px;
   color:black;
-  width: 400px;
   align-items: flex-end;
+  flex-wrap: wrap;
+}
+.form label{
+display:flex;
+flex-wrap: wrap;
+   flex-direction: column;
+gap: 10px;
+align-items: first baseline;
+
+
 }
 
 .form input {
@@ -45,4 +54,16 @@
 .addContact:hover{
      background-color: #ece9e9;
 
+}
+
+@media screen and (min-width: 720px){
+  .form{
+      width: 400px;
+      flex-wrap: nowrap;
+  }
+
+  .form label{
+    flex-direction: column;
+
+  }
 }

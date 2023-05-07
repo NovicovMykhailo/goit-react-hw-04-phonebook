@@ -12,7 +12,8 @@ li {
   outline: 1px dotted rgb(255, 255, 255);
   outline-offset: -4px;
   outline-width: 2px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(https://pixabay.com/get/g4758989825b51862918c37d010cdd2b99b0d9b120df986675db259676b1c4d1d08eb258548272afc386a446b7e81b853d7f4e2a6d3a38e0f0536da357ec75dc9_640.jpg); background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -23,7 +24,7 @@ li {
   justify-content: space-between;
   margin: 0;
   font-size: 16px;
-  align-items:first baseline;
+  align-items: first baseline;
   font-weight: 500;
   text-transform: uppercase;
   gap: 15px;
@@ -33,7 +34,6 @@ li {
   text-transform: capitalize;
   font-size: 28px;
   font-weight: 400;
-  /* color: gray; */
   color: white;
 }
 
@@ -60,8 +60,7 @@ li {
   box-shadow: rgba(41, 180, 168, 0.594) 0px 3px 8px;
   transform: translateY(4px);
 }
-.button:hover{
-     background-color: #ece9e9fd;
-     color: rgb(100, 100, 100);
+.button:hover {
+  background-color: #ece9e9fd;
+  color: rgb(100, 100, 100);
 }
-
