@@ -33,9 +33,12 @@ export class App extends Component {
 
   addContact = data => {
     const contact = { id: shortid.generate(), ...data };
-    if (Boolean(this.state.contacts.find(o => o.name === data.name))) {
+    if (this.state.contacts.find(o => o.name === data.name)) {
+
       return alert(`<< ${data.name} >> is already in contacts`);
+
     } else {
+      
       this.setState(({ contacts }) => ({
         contacts: [contact, ...contacts],
       }));
