@@ -1,9 +1,8 @@
 import css from './ContactList.module.css';
 import ContactCard from '../ContactCard/ContactCard';
 import PropTypes from 'prop-types';
+
 const shortid = require('shortid');
-
-
 
 export default function ContactList(props) {
   const { list, removeCard } = props;
