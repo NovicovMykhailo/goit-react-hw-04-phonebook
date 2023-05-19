@@ -27,7 +27,7 @@ export function App() {
   const addContact = data => {
     const contact = { id: shortid.generate(), ...data };
 
-    if (contacts.find(o => o.name === data.name)) {
+    if (contacts.find(o => o.name.toLowerCase() === data.name.toLowerCase())) {
       return alert(`<< ${data.name} >> is already in contacts`);
     } else {
       setContacts(prev => [contact, ...prev]);
